@@ -5,8 +5,17 @@ var maxTime = 1000;
 // call takes random amount of time < 1s
 
 var evenDoubler = function(v, callback){
-
-}
+    var waitTime = Math.floor(Math.random() * (maxTime + 1));
+    if (v%2) {
+        setTimeout(function() {
+            callback(new Error("Odd Input"));
+        }, waitTime);
+     } else {
+        setTimeout(function() {
+            callback(null, v*2, waitTime);
+        }, waitTime );
+    }   
+};
 
 var handleResults = function(err, results, time) {
     if (err) {
@@ -17,5 +26,7 @@ var handleResults = function(err, results, time) {
 };
 
 evenDoubler(2, handleResults);
+evenDoubler(3, handleResults);
+evenDoubler(10, handleResults);
 
 console.log("-----");
