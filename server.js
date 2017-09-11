@@ -9,4 +9,5 @@ http.createServer(function(req, res){
         res.end("Hello World");
     }
 }).listen(process.env.PORT, process.env.IP);
+console.log(process.env.PORT + process.env.IP);
 console.log('Server running!');
