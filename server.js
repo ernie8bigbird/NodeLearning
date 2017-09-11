@@ -8,6 +8,6 @@ http.createServer(function(req, res){
     } else {
         res.end("Hello World");
     }
-}).listen(80, "testServer");
+}).listen(8080);
 console.log('port' + process.env.PORT + 'IP' + process.env.IP);
 console.log('Server running!');
